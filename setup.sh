@@ -78,7 +78,7 @@ fi
 
 ttet=`uname -r`
 ReqPKG="linux-headers-$ttet"
-if dpkg -s $ReqPKG  >/dev/null 2>&1; then
+if ! dpkg -s $ReqPKG  >/dev/null 2>&1; then
   rm /root/setup.sh >/dev/null 2>&1 
   exit
 else
