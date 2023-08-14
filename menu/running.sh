@@ -247,8 +247,7 @@ kernelku=$(uname -r)
 
 # DNS PATCH
 #tipeos2=$(uname -m)
-Name=$(curl -sS https://raw.githubusercontent.com/Zayxc/VPN/aio/permission/ip | grep $MYIP | awk '{print $2}')
-Exp=$(curl -sS https://raw.githubusercontent.com/Zayxc/VPN/aio/permission/ip | grep $MYIP | awk '{print $3}')
+
 # GETTING DOMAIN NAME
 Domen="$(cat /etc/xray/domain)"
 echo -e ""
