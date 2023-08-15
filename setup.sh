@@ -18,14 +18,7 @@ green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 cd /root
 #System version number
-if [ "${EUID}" -ne 0 ]; then
-		echo "You need to run this script as root"
-		exit 1
-fi
-if [ "$(systemd-detect-virt)" == "openvz" ]; then
-		echo "OpenVZ is not supported"
-		exit 1
-fi
+
 
 localip=$(hostname -I | cut -d\  -f1)
 hst=( `hostname` )
@@ -79,7 +72,7 @@ fi
 
 ttet=`uname -r`
 ReqPKG="linux-headers-$ttet"
-if ! dpkg -s $ReqPKG  >/dev/null 2>&1; then
+if dpkg -s $ReqPKG  >/dev/null 2>&1; then
   rm /root/setup.sh >/dev/null 2>&1 
   exit
 else
