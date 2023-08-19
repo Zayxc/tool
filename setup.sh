@@ -18,14 +18,7 @@ green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 cd /root
 #System version number
-if [ "${EUID}" -ne 0 ]; then
-		echo "You need to run this script as root"
-		exit 1
-fi
-if [ "$(systemd-detect-virt)" == "openvz" ]; then
-		echo "OpenVZ is not supported"
-		exit 1
-fi
+
 
 localip=$(hostname -I | cut -d\  -f1)
 hst=( `hostname` )
@@ -48,24 +41,16 @@ echo -e "[ ${tyblue}NOTES${NC} ] I need check your headers first.."
 sleep 0.5
 echo -e "[ ${green}INFO${NC} ] Checking headers"
 sleep 0.5
-totet=`uname -r`
-REQUIRED_PKG="linux-headers-$totet"
-PKG_OK=$(dpkg-query -W --showformat='${Status}\n' $REQUIRED_PKG|grep "install ok installed")
-echo Checking for $REQUIRED_PKG: $PKG_OK
-if [ "" = "$PKG_OK" ]; then
+
+if [ "" = "" ]; then
   sleep 0.5
   echo -e "[ ${yell}WARNING${NC} ] Try to install ...."
-  echo "No $REQUIRED_PKG. Setting up $REQUIRED_PKG."
-  apt-get --yes install $REQUIRED_PKG
+  echo ""
+  
   sleep 0.5
   echo ""
   sleep 0.5
-  echo -e "[ ${tyblue}NOTES${NC} ] If error you need.. to do this"
-  sleep 0.5
-  echo ""
-  sleep 0.5
-  echo -e "[ ${tyblue}NOTES${NC} ] apt update && upgrade"
-  sleep 0.5
+  
   echo ""
   sleep 0.5
   echo -e "[ ${tyblue}NOTES${NC} ] After this"
@@ -77,9 +62,8 @@ else
   echo -e "[ ${green}INFO${NC} ] Oke installed"
 fi
 
-ttet=`uname -r`
-ReqPKG="linux-headers-$ttet"
-if ! dpkg -s $ReqPKG  >/dev/null 2>&1; then
+
+if  >/dev/null 2>&1; then
   rm /root/setup.sh >/dev/null 2>&1 
   exit
 else
