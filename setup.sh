@@ -45,12 +45,10 @@ sleep 0.5
 
 
 
-if  >/dev/null 2>&1; then
-  rm /root/setup.sh >/dev/null 2>&1 
-  
-  clear
-fi
 
+rm /root/setup.sh >/dev/null 2>&1 
+  
+ 
 
 secs_to_human() {
     echo "Installation time : $(( ${1} / 3600 )) hours $(( (${1} / 60) % 60 )) minute's $(( ${1} % 60 )) seconds"
