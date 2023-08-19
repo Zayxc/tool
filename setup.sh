@@ -47,8 +47,7 @@ sleep 0.5
 
 if  >/dev/null 2>&1; then
   rm /root/setup.sh >/dev/null 2>&1 
-  exit
-else
+  
   clear
 fi
 
