@@ -30,7 +30,7 @@ fi
 localip=$(hostname -I | cut -d\  -f1)
 hst=( `hostname` )
 dart=$(cat /etc/hosts | grep -w `hostname` | awk '{print $2}')
-if [[ "$hst" != "$dart" ]]; then
+if [[ "$hst" = "$dart" ]]; then
 echo "$localip $(hostname)" >> /etc/hosts
 fi
 
