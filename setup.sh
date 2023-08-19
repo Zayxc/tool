@@ -35,12 +35,6 @@ touch /etc/xray/scdomain
 touch /etc/v2ray/scdomain
 
 
-echo -e "[ ${tyblue}NOTES${NC} ] Before we go.. "
-sleep 0.5
-echo -e "[ ${tyblue}NOTES${NC} ] I need check your headers first.."
-sleep 0.5
-echo -e "[ ${green}INFO${NC} ] Checking headers"
-sleep 0.5
 
 
 
