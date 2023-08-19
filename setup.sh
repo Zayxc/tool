@@ -42,25 +42,7 @@ sleep 0.5
 echo -e "[ ${green}INFO${NC} ] Checking headers"
 sleep 0.5
 
-if [ "" = "" ]; then
-  sleep 0.5
-  echo -e "[ ${yell}WARNING${NC} ] Try to install ...."
-  echo ""
-  
-  sleep 0.5
-  echo ""
-  sleep 0.5
-  
-  echo ""
-  sleep 0.5
-  echo -e "[ ${tyblue}NOTES${NC} ] After this"
-  sleep 0.5
-  echo -e "[ ${tyblue}NOTES${NC} ] Then run this script again"
-  echo -e "[ ${tyblue}NOTES${NC} ] enter now"
-  read
-else
-  echo -e "[ ${green}INFO${NC} ] Oke installed"
-fi
+
 
 
 if  >/dev/null 2>&1; then
