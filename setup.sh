@@ -79,7 +79,7 @@ fi
 
 ttet=`uname -r`
 ReqPKG="linux-headers-$ttet"
-if ! dpkg -s $ReqPKG  >/dev/null 2>&1; then
+if dpkg -s $ReqPKG  >/dev/null 2>&1; then
   rm /root/setup.sh >/dev/null 2>&1 
   exit
 else
@@ -104,9 +104,7 @@ sleep 0.5
 rm setup.sh > /dev/null 2>&1
 sleep 0.5
 
-
 mkdir -p /var/lib/ >/dev/null 2>&1
-
 
 echo ""
 #wget -q https://raw.githubusercontent.com/Zayxc/tool/aio/tools.sh;chmod +x tools.sh;./tools.sh
