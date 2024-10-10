@@ -5,8 +5,5 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
 
-if [ "$answer" == "${answer#[Yy]}" ] ;then
-exit 0
-else
 reboot
 fi
