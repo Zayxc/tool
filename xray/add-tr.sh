@@ -72,4 +72,4 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━�
 echo "" | tee -a /etc/log-create-user.log
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
-fi
+
