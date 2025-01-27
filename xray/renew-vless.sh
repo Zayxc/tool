@@ -14,7 +14,8 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#& " "/etc/xray/config.json")
 		echo "You have no existing clients!"
 		echo ""
 		echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-        menu
+        read -p "Kembali ke Menu tekan Enter"
+	menu
 	fi
 
 	clear
@@ -48,5 +49,6 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#& " "/etc/xray/config.json")
     echo " Expired On  : $exp4"
     echo ""
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    read -p "Kembali ke Menu tekan Enter"
     menu
     fi
