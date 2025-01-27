@@ -94,5 +94,5 @@ GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" | tee -a /etc/log-create-user.log
 fi
 echo "" | tee -a /etc/log-create-user.log
-read -n 1 -s -r -p "Press any key to back on menu"
+read -p "Kembali ke Menu tekan Enter"
 menu
