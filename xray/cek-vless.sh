@@ -52,5 +52,5 @@ echo "other";
 echo "$oth";
 echo "----------------------------------------"
 rm -rf /tmp/other.txt
-read -n 1 -s -r -p "Press any key to back on menu"
+read -p "Kembali ke Menu tekan Enter"
 menu
