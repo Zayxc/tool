@@ -100,5 +100,5 @@ case $AutoKill in
                 autokill-menu
                 ;;
         esac
-read -n 1 -s -r -p "Press any key to back on menu"
+read -p "Kembali ke Menu tekan Enter"
 menu
