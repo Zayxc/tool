@@ -3,7 +3,7 @@
 # ==================================================
 
 # etc
-apt dist-upgrade -y
+# apt dist-upgrade -y
 apt install netfilter-persistent -y
 apt-get remove --purge ufw firewalld -y
 apt install -y screen curl jq bzip2 gzip vnstat coreutils rsyslog iftop zip unzip git apt-transport-https build-essential -y
@@ -68,9 +68,9 @@ echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
 #update
-apt update -y
-apt upgrade -y
-apt dist-upgrade -y
+# apt update -y
+# apt upgrade -y
+# apt dist-upgrade -y
 apt-get remove --purge ufw firewalld -y
 apt-get remove --purge exim4 -y
 
@@ -162,15 +162,15 @@ screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7800 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7900 --max-clients 500
 
 # setting port ssh
-cd
-sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
-sed -i '/Port 22/a Port 500' /etc/ssh/sshd_config
-sed -i '/Port 22/a Port 40000' /etc/ssh/sshd_config
-sed -i '/Port 22/a Port 51443' /etc/ssh/sshd_config
-sed -i '/Port 22/a Port 58080' /etc/ssh/sshd_config
-sed -i '/Port 22/a Port 200' /etc/ssh/sshd_config
-sed -i '/Port 22/a Port 22' /etc/ssh/sshd_config
-/etc/init.d/ssh restart
+# cd
+# sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+# sed -i '/Port 22/a Port 500' /etc/ssh/sshd_config
+# sed -i '/Port 22/a Port 40000' /etc/ssh/sshd_config
+# sed -i '/Port 22/a Port 51443' /etc/ssh/sshd_config
+# sed -i '/Port 22/a Port 58080' /etc/ssh/sshd_config
+# sed -i '/Port 22/a Port 200' /etc/ssh/sshd_config
+# sed -i '/Port 22/a Port 22' /etc/ssh/sshd_config
+# /etc/init.d/ssh restart
 
 echo "=== Install Dropbear ==="
 # install dropbear
